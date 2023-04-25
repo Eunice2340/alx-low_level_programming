@@ -5,15 +5,14 @@
  */
 int main(void)
 {
-	int n = '0';
-	int m = '0';
+	int n, m;
 
-	for (m = '0'; m <= '9'; m++)
-		for (n = '0'; n <= '9'; n++)
-			if (!((n == m) || (m > n)))
-				putchar(m);
-	putchar(n);
-	if (!(n == '9' && m == '8'))
+	for (n = 48; n <= 56; n++)
+		for (m = 49; m <= 57; m++)
+			if (m > n)
+				putchar(n);
+	putchar(m);
+	if (n != 56 || m != 57)
 		putchar(',');
 	putchar(' ');
 	putchar('\n');
