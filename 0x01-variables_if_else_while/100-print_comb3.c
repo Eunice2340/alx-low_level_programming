@@ -1,15 +1,23 @@
-#inclde <stdio.h>
+#include <stdio.h>
 /**
  * main - Prints combonations of two digits
  * Return: 0
  */
 int main(void)
 {
-	int n, m;
+	int n = '0';
+	int m = '0';
 
-	for (n =46; n <= 56; n++)
-		for (n = 48; n <=56; n++)
-			if (m > n)
-				putchar
+	for (m = '0'; m <= '9'; m++)
+		for (n = '0'; n <= '9'; n++)
+			if (!((n == m) || (m > n)))
+				putchar(m);
+	putchar(n);
+	if (!(n == '9' && m == '8'))
+		putchar(',');
+	putchar(' ');
+	putchar('\n');
+	return (0);
+}
 
 
