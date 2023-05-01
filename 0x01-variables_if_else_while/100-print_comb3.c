@@ -1,22 +1,30 @@
 #include <stdio.h>
+#include <unistd.h>
 /**
  * main - Prints combonations of two digits
  * Return: 0
  */
 int main(void)
 {
-	int n, m;
+	int a, b, c, d;
 
-	for (n = 48; n <= 56; n++)
-		for (m = 49; m <= 57; m++)
-			if (m > n)
-				putchar(n);
-	putchar(m);
-	if (n != 56 || m != 57)
+	for (a = 48; a <= 57; a++)
+		for (b = 48; b <= 57; b++)
+			for (c = 48; c <= 57; c++)
+				for (d = 48; d <= 57; d++)
+					if (((c + d) > (a + b) && c >= a) || a < c)
+						putchar(a);
+	putchar(b);
+	putchar(' ');
+	putchar(c);
+	putchar(d);
+
+	if (a + b + c + d == 227 && a == 57)
+		break;
+	else
 		putchar(',');
 	putchar(' ');
 	putchar('\n');
 	return (0);
 }
-
 
